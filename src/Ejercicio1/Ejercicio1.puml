@@ -1,0 +1,25 @@
+@startuml
+class Agenda{
+    -contactos: List<Contacto>
+    +agregarContacto(contacto: Contacto): void
+    +eliminarContacto(nombre: String): void
+    +buscarContacto(nombre: String): Contacto
+}
+
+class Contacto{
+    -nombre: String
+    -telefono: String
+    -correo: String
+    -etiquetas: List<Etiqueta>
+    +agregarEtiqueta(etiqueta: Etiqueta): void
+    +eliminarEtiqueta(etiqueta: Etiqueta): void
+}
+
+class Etiqueta{
+    -nombre: String
+}
+
+Agenda "1" -- "*" Contacto: tiene
+Contacto "*" -- "*" Etiqueta: tiene
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+class Cliente {
+  -nombre: String
+  -email: String
+  +realizarPedido(): Pedido
+}
+
+class Pedido {
+  -fecha: Date
+  -detalles: List<DetallePedido>
+  +agregarProducto(producto: Producto, cantidad: int): void
+  +calcularTotal(): float
+}
+
+class Producto {
+  -codigo: String
+  -nombre: String
+  -precio: float
+}
+
+class DetallePedido {
+  -cantidad: int
+  -precioUnitario: float
+  +subtotal(): float
+}
+
+Cliente "1" --> "*" Pedido : realiza
+Pedido "1" *-- "*" DetallePedido: tiene
+DetallePedido "*" --> "1" Producto: contiene
+@enduml

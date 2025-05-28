@@ -1,0 +1,52 @@
+@startuml
+class Paciente {
+  -nombre: String
+  -ci: String
+  +solicitarTurno(medico: Medico, fecha: Date): Turno
+}
+
+class Medico {
+  -nombre: String
+  -matricula: String
+  +atender(turno: Turno): void
+}
+
+class Cirujano extends Medico {
+  +realizarOperacion(): void
+}
+
+class Clinico extends Medico {
+  +realizarConsulta(): void
+}
+
+class Turno {
+  -fecha: Date
+  -hora: Time
+  -estado: String
+}
+
+class Area {
+  -codigo: String
+  -nombre: String
+}
+
+class Historial {
+  -registros: List<RegistroMedico>
+  +agregarRegistro(registro: RegistroMedico): void
+}
+
+class RegistroMedico{
+    -fecha: Date
+    -descripcion: String
+    +getRegistro(): String
+}
+
+Medico "1" -- "*" Turno: atiende
+Medico "1" -- "*" Area: pertenece
+Medico "1" -- "*" RegistroMedico: realiza
+Paciente "1" -- "1" Historial: tiene
+Paciente "1" -- "*" Turno: tiene
+Historial "1" -- "*" RegistroMedico: contiene
+
+
+@enduml

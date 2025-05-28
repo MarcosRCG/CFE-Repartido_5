@@ -1,0 +1,13 @@
+@startuml
+class Cuenta {
+    -numero: String
+    -titular: String
+    -saldo: double
+    +getSaldo(): float
+    +getTitular(): String
+    +getNumero(): String
+    +depositar(monto: double): void
+    +retirar(monto: double): void
+}
+
+@enduml

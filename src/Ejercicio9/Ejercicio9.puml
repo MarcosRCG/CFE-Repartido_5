@@ -1,0 +1,13 @@
+@startuml
+class Producto {
+    -codigo: String
+    -nombre: String
+    -stock: int
+    -precio: double
+    +vender(cantidad: int): void
+    +reponer(cantidad: int): void
+    +getStock(): int
+    +getPrecio(): double
+    +setPrecio(nuevoPrecio: double)
+}
+@enduml
