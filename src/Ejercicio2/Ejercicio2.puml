@@ -7,7 +7,7 @@ class Cliente {
 
 class Pedido {
   -fecha: Date
-  -detalles: List<DetallePedido>
+  -detalles: DetallePedido[]
   +agregarProducto(producto: Producto, cantidad: int): void
   +calcularTotal(): float
 }

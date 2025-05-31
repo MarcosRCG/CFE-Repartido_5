@@ -1,6 +1,6 @@
 @startuml
 class Agenda{
-    -contactos: List<Contacto>
+    -contactos: Contacto[]
     +agregarContacto(contacto: Contacto): void
     +eliminarContacto(nombre: String): void
     +buscarContacto(nombre: String): Contacto
@@ -10,7 +10,7 @@ class Contacto{
     -nombre: String
     -telefono: String
     -correo: String
-    -etiquetas: List<Etiqueta>
+    -etiquetas: Etiqueta[]
     +agregarEtiqueta(etiqueta: Etiqueta): void
     +eliminarEtiqueta(etiqueta: Etiqueta): void
 }

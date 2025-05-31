@@ -31,7 +31,7 @@ class Area {
 }
 
 class Historial {
-  -registros: List<RegistroMedico>
+  -registros: RegistroMedico[]
   +agregarRegistro(registro: RegistroMedico): void
 }
 

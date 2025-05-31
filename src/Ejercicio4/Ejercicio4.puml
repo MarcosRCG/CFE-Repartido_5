@@ -2,8 +2,8 @@
 class Usuario{
     -nombre: String
     -correo: String
-    -seguidores: List<>
-    -seguidos: List<>
+    -seguidores: Usuario[]
+    -seguidos: Usuario[]
     +publicar(contenido: String): void
     +comentar(publicacion: Publicacion, texto: String): void
     +unirseAGrupo(grupo: Grupo): void
@@ -26,7 +26,7 @@ class Publicacion {
     -contenido: String
     -fecha: date
     -autor: Usuario
-    -comentarios: List<Comentario>
+    -comentarios: Comentario[]
 }
 
 class Comentario {
@@ -37,7 +37,7 @@ class Comentario {
 
 class Grupo {
     -nombre: String
-    -miembros: List<Usuario>
+    -miembros: Usuario[]
     +agregarMiembro(usuario: Usuario): void
 }
 
